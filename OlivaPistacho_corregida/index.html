@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="es" dir="ltr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="color-scheme" content="light dark">
+<meta name="description" content="Pistachos, aceite de oliva, aceitunas, vino y uvas directamente de nuestra finca mediterránea.">
+<title>OlivaPistacho</title>
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E🫒%3C/text%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:wght@400;700&family=Figtree:wght@400;500;600;700;800&family=Fraunces:opsz,wght@9..144,600;9..144,800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+<a class="skip" href="#main" data-t="Saltar al contenido"></a>
+
+<!-- Barra superior: idioma y accesibilidad -->
+<div class="bar" role="group" data-a="Accesibilidad e idioma">
+  <label for="lang" data-t="Idioma"></label>
+  <select id="lang"></select>
+  <span role="group" data-a="Tamaño del texto" style="display:inline-flex;gap:6px">
+    <button type="button" id="fs-" data-a="Texto más pequeño">A−</button>
+    <button type="button" id="fs+" data-a="Texto más grande">A+</button>
+  </span>
+  <button type="button" id="a11yb" aria-expanded="false" aria-controls="a11yp"><span aria-hidden="true">♿</span> <span data-t="Accesibilidad"></span></button>
+</div>
+
+<div class="a11y" id="a11yp" role="region" aria-labelledby="a11y-h" hidden>
+  <div class="a11y-in">
+    <h2 id="a11y-h" data-t="Opciones de accesibilidad"></h2>
+    <div class="a11y-grid">
+      <label class="sw"><input type="checkbox" data-pref="hc"><span data-t="Alto contraste"></span></label>
+      <label class="sw"><input type="checkbox" data-pref="dark"><span data-t="Modo oscuro"></span></label>
+      <label class="sw"><input type="checkbox" data-pref="dys"><span data-t="Fuente fácil de leer"></span></label>
+      <label class="sw"><input type="checkbox" data-pref="sp"><span data-t="Más espacio entre letras y líneas"></span></label>
+      <label class="sw"><input type="checkbox" data-pref="rm"><span data-t="Reducir animaciones"></span></label>
+      <label class="sw"><input type="checkbox" data-pref="hl"><span data-t="Resaltar enlaces y botones"></span></label>
+      <label class="sw"><input type="checkbox" data-pref="bigcursor"><span data-t="Cursor grande"></span></label>
+    </div>
+    <div class="a11y-row">
+      <button type="button" class="btn btn-primary btn-sm" id="tts" aria-pressed="false"><span aria-hidden="true">🔊</span> <span id="tts-l" data-t="Leer en voz alta"></span></button>
+      <button type="button" class="btn btn-outline btn-sm" id="a11y-reset" data-t="Restablecer todo"></button>
+    </div>
+  </div>
+</div>
+
+<header class="site"><div class="hi">
+  <a class="logo" href="#home" aria-label="OlivaPistacho">Oliva<span>Pistacho</span></a>
+  <nav class="main" data-a="Menú principal">
+    <a href="#home" data-nav="home" data-t="Inicio"></a>
+    <a href="#productos" data-nav="productos" data-t="Productos"></a>
+    <a href="#servicios" data-nav="servicios" data-t="Servicios"></a>
+    <a href="#resenas" data-nav="resenas" data-t="Reseñas"></a>
+    <a href="#admin" data-nav="admin" id="nav-admin" hidden>Admin</a>
+  </nav>
+  <div class="acts">
+    <a class="hbtn cartb" id="cartb" href="#carrito" data-nav="carrito"><span aria-hidden="true">🛒</span><span id="cc" aria-hidden="true">0</span></a>
+    <span id="who"></span>
+    <button type="button" class="hbtn" id="authb"></button>
+  </div>
+</div></header>
+
+<main id="main" tabindex="-1">
+
+  <!-- INICIO: vídeo + quiénes somos -->
+  <section id="home">
+    <div class="hero">
+      <div>
+        <div class="vid">
+          <video id="introv" poster="assets/poster.jpg" preload="metadata" muted playsinline controls data-a="Vídeo de presentación de OlivaPistacho, sin sonido y con subtítulos.">
+            <source src="assets/intro.mp4" type="video/mp4">
+          </video>
+        </div>
+        <details class="tr">
+          <summary data-t="Leer la transcripción del vídeo"></summary>
+          <p id="tr-text"></p>
+        </details>
+      </div>
+      <div class="about">
+        <h1 data-t="Del campo a tu mesa"></h1>
+        <h2 data-t="Quiénes somos"></h2>
+        <p data-t="Somos una familia agricultora del Mediterráneo. Cultivamos pistachos, olivos y viñedos, y vendemos sin intermediarios: de nuestra finca a tu casa."></p>
+        <div class="cta"><a class="btn btn-gold" href="#productos" data-t="Ver productos"></a></div>
+      </div>
+    </div>
+    <section class="box inclusion" aria-labelledby="inclusive-title">
+      <h2 id="inclusive-title"><span data-t="Una web para todas las personas">Una web para todas las personas</span></h2>
+      <p><span data-t="Diseñada para facilitar el uso a personas sordas, ciegas, con movilidad reducida, dislexia, baja visión, dificultades cognitivas o sensibilidad al movimiento.">Diseñada para facilitar el uso a personas sordas, ciegas, con movilidad reducida, dislexia, baja visión, dificultades cognitivas o sensibilidad al movimiento.</span></p>
+      <ul>
+        <li><span data-t="Vídeo con subtítulos y transcripción textual.">Vídeo con subtítulos y transcripción textual.</span></li>
+        <li><span data-t="Se puede navegar con teclado y foco visible.">Se puede navegar con teclado y foco visible.</span></li>
+        <li><span data-t="Compatibilidad con lectores de pantalla y etiquetas de formulario.">Compatibilidad con lectores de pantalla y etiquetas de formulario.</span></li>
+        <li><span data-t="Texto ampliable, alto contraste y modo oscuro.">Texto ampliable, alto contraste y modo oscuro.</span></li>
+        <li><span data-t="Fuente legible, espaciado adicional y opción de reducir animaciones.">Fuente legible, espaciado adicional y opción de reducir animaciones.</span></li>
+        <li><span data-t="Lectura en voz alta de la sección actual (según el navegador).">Lectura en voz alta de la sección actual (según el navegador).</span></li>
+      </ul>
+      <p><strong>Consejo:</strong> abre el panel «Accesibilidad» en la barra superior para activar las opciones.</p>
+    </section>
+    <div class="sh"><h2 data-t="Destacados"></h2></div>
+    <div class="grid" id="g-feat"></div>
+  </section>
+
+  <!-- PRODUCTOS -->
+  <section id="productos" hidden>
+    <div class="sh"><h2 data-t="Productos"></h2><p data-t="Selección de pistachos, aceite, aceitunas, vino y uvas."></p></div>
+    <div class="filters" role="group" id="filters" data-a="Filtrar por categoría"></div>
+    <div class="grid" id="g-prod"></div>
+  </section>
+
+  <!-- SERVICIOS -->
+  <section id="servicios" hidden>
+    <div class="sh"><h2 data-t="Servicios"></h2><p data-t="Experiencia, asesoramiento y venta profesional"></p></div>
+    <div class="grid" id="g-serv"></div>
+  </section>
+
+  <!-- CARRITO -->
+  <section id="carrito" hidden>
+    <div class="sh"><h2 data-t="Tu carrito"></h2></div>
+    <div id="cart"></div>
+  </section>
+
+  <!-- PAGO -->
+  <section id="checkout" hidden>
+    <div class="sh"><h2 data-t="Finalizar compra"></h2></div>
+    <form id="co" class="cg">
+      <div>
+        <h3 data-t="Datos de envío"></h3><br>
+        <div class="fg"><label for="s-name" data-t="Nombre completo"></label><input id="s-name" required autocomplete="name"></div>
+        <div class="fg"><label for="s-mail" data-t="Email"></label><input id="s-mail" type="email" required autocomplete="email"></div>
+        <div class="fg"><label for="s-addr" data-t="Dirección"></label><input id="s-addr" required autocomplete="street-address"></div>
+        <div class="fg"><label for="s-tel" data-t="Teléfono"></label><input id="s-tel" type="tel" autocomplete="tel"></div>
+      </div>
+      <div>
+        <fieldset>
+          <legend><h3 data-t="Método de pago"></h3></legend>
+          <div class="pays">
+            <label class="pay"><input type="radio" name="pay" value="Tarjeta" required><span aria-hidden="true">💳</span><b data-t="Tarjeta"></b></label>
+            <label class="pay"><input type="radio" name="pay" value="PayPal"><span aria-hidden="true">🅿️</span><b>PayPal</b></label>
+            <label class="pay"><input type="radio" name="pay" value="Bizum"><span aria-hidden="true">📱</span><b>Bizum</b></label>
+            <label class="pay"><input type="radio" name="pay" value="Transferencia"><span aria-hidden="true">🏦</span><b data-t="Transferencia"></b></label>
+          </div>
+        </fieldset>
+        <div class="age-box" id="age-box" hidden>
+          <input type="checkbox" id="s-age">
+          <label for="s-age" data-t="Soy mayor de 18 años (mi pedido incluye vino)."></label>
+        </div>
+        <p class="hint" data-t="Demostración: el pago es simulado y no se realiza ningún cargo."></p>
+        <p class="tot" id="co-tot" style="text-align:start"></p>
+        <button class="btn btn-primary" type="submit" data-t="Confirmar y pagar"></button>
+      </div>
+    </form>
+  </section>
+
+  <!-- RESEÑAS -->
+  <section id="resenas" hidden>
+    <div class="sh"><h2 data-t="Reseñas de clientes"></h2></div>
+    <div id="revs"></div>
+    <form class="box" id="rf">
+      <h3 data-t="Deja tu reseña"></h3><br>
+      <div class="fg"><label for="r-name" data-t="Tu nombre"></label><input id="r-name" autocomplete="name"></div>
+      <div class="fg"><label for="r-stars" data-t="Valoración"></label>
+        <select id="r-stars"><option value="5">★★★★★</option><option value="4">★★★★☆</option><option value="3">★★★☆☆</option><option value="2">★★☆☆☆</option><option value="1">★☆☆☆☆</option></select></div>
+      <div class="fg"><label for="r-text" data-t="Comentario"></label><textarea id="r-text" rows="3" required></textarea></div>
+      <button class="btn btn-primary" data-t="Publicar reseña"></button>
+    </form>
+  </section>
+
+  <!-- ADMIN (solo propietario; texto en español) -->
+  <section id="admin" hidden>
+    <div class="sh"><h2>Panel de administración</h2></div>
+    <div id="adm"></div>
+  </section>
+</main>
+
+<footer class="site"><p><strong>OlivaPistacho</strong> · <span data-t="Web accesible: se puede usar con teclado, lector de pantalla, subtítulos y alto contraste."></span></p></footer>
+
+<!-- Inicio de sesión / registro -->
+<div id="login" role="dialog" aria-modal="true" aria-labelledby="l-title" hidden>
+  <div class="lc">
+    <button type="button" class="x" id="l-x" data-a="Cerrar">✕</button>
+    <h2 id="l-title" data-t="Para comprar necesitas una cuenta"></h2><br>
+    <form id="lf">
+      <div class="fg"><label for="l-mail" data-t="Correo electrónico"></label><input id="l-mail" type="email" required autocomplete="email"></div>
+      <div class="fg"><label for="l-pass" data-t="Contraseña"></label><input id="l-pass" type="password" required autocomplete="current-password"></div>
+      <button class="btn btn-primary" style="width:100%" data-t="Entrar"></button>
+      <p class="err" role="alert" id="l-err"></p>
+      <p style="margin-top:14px"><span data-t="¿No tienes cuenta?"></span> <button type="button" class="btn btn-outline btn-sm" id="to-reg" data-t="Regístrate"></button></p>
+    </form>
+    <form id="rgf" hidden>
+      <div class="fg"><label for="g-name" data-t="Nombre"></label><input id="g-name" required autocomplete="name"></div>
+      <div class="fg"><label for="g-mail" data-t="Correo electrónico"></label><input id="g-mail" type="email" required autocomplete="email"></div>
+      <div class="fg"><label for="g-p1" data-t="Contraseña (mínimo 6 caracteres)"></label><input id="g-p1" type="password" required minlength="6" autocomplete="new-password"></div>
+      <div class="fg"><label for="g-p2" data-t="Repetir contraseña"></label><input id="g-p2" type="password" required minlength="6" autocomplete="new-password"></div>
+      <button class="btn btn-primary" style="width:100%" data-t="Crear cuenta"></button>
+      <p class="err" role="alert" id="g-err"></p>
+      <p style="margin-top:14px"><span data-t="¿Ya tienes cuenta?"></span> <button type="button" class="btn btn-outline btn-sm" id="to-log" data-t="Inicia sesión"></button></p>
+    </form>
+  </div>
+</div>
+
+<!-- Aviso emergente (se puede cerrar) + región para lectores de pantalla -->
+<div id="toast" hidden><span id="toast-t"></span><button type="button" id="toast-x" data-a="Cerrar aviso">✕</button></div>
+<div id="live" class="sr-only" aria-live="polite" aria-atomic="true"></div>
+
+<!-- Librería de Supabase + configuración + textos + lógica -->
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2/dist/umd/supabase.js"></script>
+<script src="js/config.js"></script>
+<script src="js/i18n.js"></script>
+<script src="js/app.js"></script>
+</body>
+</html>
